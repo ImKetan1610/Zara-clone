@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>place order</title>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./styles/navbar.css">
+<link rel="stylesheet" href="./styles/footer.css">
+<link rel="stylesheet" href="./styles/placeOrder.css">
+
+<body>
+    <header class="zaraHeader"></header>
+
+    <div id="container">
+        <div id="shipmentInfo"></div>
+        <div id="prodInfo"><p id="abc"></p></div>
+    </div>
+    <div id="total">
+        <div id="total1"></div>
+        <div onclick ="payment()">AUTHORIZE PAYMENT</div>
+    </div>
+    
+    <footer class="zaraFooter"></footer>
+</body>
+</html>
+
+<script type="module">
+
+    import navbar from './components/navbar.js';
+
+    let nav = document.querySelector(".zaraHeader");
+    nav.innerHTML = navbar();
+
+    import footer from './components/footer.js';
+
+    let foot = document.querySelector(".zaraFooter");
+    foot.innerHTML = footer();
+
+</script>
+
+<script>
+
+let shippingInfoArray= JSON.parse(localStorage.getItem("zara_user_array"));
+let authUser = (localStorage.getItem("zaraAuthUser"));
+
+   let information = document.getElementById("shipmentInfo");
+   displayDetail(shippingInfoArray);
+
+   function displayDetail(shippingInfoArray) {
+
+       for(let i =0; i<shippingInfoArray.length; i++){
+           if(authUser==shippingInfoArray[i].userName){
+               let name1 = document.createElement("p");
+               name1.innerText = shippingInfoArray[i].userName;
+               let address = document.createElement("p");
+               address.innerText = `Address: ${shippingInfoArray[i].userAddress}`;
+               let locality = document.createElement("p");
+               locality.innerText = `Locality: ${shippingInfoArray[i].userLocality}`;
+               let city = document.createElement("p");
+               city.innerText =`City: ${shippingInfoArray[i].userCity}`;
+               let state = document.createElement("p");
+               state.innerText =`State: ${shippingInfoArray[i].userState}`;
+               let country = document.createElement("p");
+               country.innerText = `Country: ${shippingInfoArray[i].userCountry}`;
+               let pincode = document.createElement("p");
+               pincode.innerText = shippingInfoArray[i].userPincode;
+               let contact = document.createElement("p");
+               contact.innerText = `Mobile: ${shippingInfoArray[i].userContact}`;
+
+               information.append(name1,address,locality,pincode,city,state,country,contact);
+
+           }
+       }
+   }
+
+
+
+
+   
+
+    let zaraShoppingBag = JSON.parse(localStorage.getItem("zaraShoppingBag")) || [];
+    let container = document.getElementById("prodInfo");
+    displayProd(zaraShoppingBag);
+
+    function displayProd(zaraShoppingBag) {
+    console.log('zaraShoppingBag:', zaraShoppingBag)
+        container.innerText=` Order will be deliver within 4-6 business days || ${zaraShoppingBag.length} items`;
+        
+        zaraShoppingBag.forEach(function(element,i) {
+            let prodDiv = document.createElement('div');
+
+            let name = document.createElement("p")
+            name.innerText = element.productName;
+
+            let imgDiv = document.createElement("div");
+            let img= document.createElement('img');
+            img.src=element.productImg;
+            imgDiv.append(img);
+
+            let infoDiv = document.createElement('div');
+            let ref = document.createElement('p');
+            ref.innerText = `REF. | ${element.productColor}`;
+
+            let price= document.createElement('p');
+            price.innerText = `₹ ${element.productPrice} MRP incl. of all taxes`;
+
+            // MRP incl. of all taxes ₹
+    
+
+            let del = document.createElement('p');
+            del.innerText = "Delete";
+            del.onclick = function(element,i) {
+                console.log('i:', i)
+                remove(element,i);
+            }
+            infoDiv.append(ref, price,del);
+            totalSum(zaraShoppingBag)
+            prodDiv.append(imgDiv,infoDiv);
+            container.append(name,prodDiv);
+        });
+
+        function remove(element,i) {
+        console.log('i:', i)
+        zaraShoppingBag.splice(element,1)
+        console.log('zaraShoppingBag:', zaraShoppingBag);
+        localStorage.setItem("zaraShoppingBag",JSON.stringify(zaraShoppingBag));
+        displayProd(zaraShoppingBag);
+        totalSum(zaraShoppingBag);
+
+        }
+
+        function totalSum(zaraShoppingBag){
+        let sum=0;
+        for(let k = 0; k<zaraShoppingBag.length; k++){
+            sum = sum + zaraShoppingBag[0].productPrice;
+        }
+
+        console.log(sum)
+
+        let sumT = document.getElementById("total1");
+        sumT.innerText = "Total "+ "-" + "₹" + sum + " " + "INCLUDING GST * EXCL SHIPPING COST";
+        sumT.style.fontSize="10px";
+        }
+    }
+
+    function payment() {
+        setTimeout(()=>{
+            window.location.href="index.html";
+            let zaraShoppingBag = JSON.parse(localStorage.getItem("zaraShoppingBag"));
+            while(zaraShoppingBag.length>=1){
+                zaraShoppingBag.pop();
+                localStorage.setItem("zaraShoppingBag",JSON.stringify(zaraShoppingBag))
+            }
+            
+
+        },6000);
+        setTimeout(function(){
+            alert("your order has been placed.")
+        },2000);
+        setTimeout(function(){
+            alert("Thanks for Shopping.")
+        },4000);
+    }
+
+</script>

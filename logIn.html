@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn</title>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./styles/navbar.css">
+<link rel="stylesheet" href="./styles/footer.css">
+<link rel="stylesheet" href="./styles/logIn.css">
+
+
+<body>
+
+    <header class = "zaraHeader">
+    </header>
+    <div id="container">
+        <div id="bodyDiv">
+            <div id="logInDiv">
+                <form>
+                    <h3>LOG IN</h3>
+                    <input id="email" type="text" placeholder="E-MAIL"><br><br>
+                    <input id="password" type="password" placeholder="PASSWORD"><br><br>
+                    <a href="#">HAVE YOU FORGOTTEN YOUR PASSWORD?</a><br><br>
+                    <input type="submit" value="LOG IN"></input>
+                </form>
+            </div>
+            <div id="registerDiv">
+                <h3>REGISTER</h3>
+                <p>IF YOU STILL DON'T HAVE A <b>ZARA.COM</b> ACCOUNT, USE THIS OPTION TO 
+                ACCESS THE REGISTRATION FORM.</p>
+                <p>BY GIVING US YOUR DETAILS, PURCHASING IN <b>ZARA.COM</b> WILL BE FASTER AND AN ENJOYABLE EXPERIENCE.</p><br>
+                <button onclick="register()" value="">CREATE ACCOUNT</button>
+            </div>
+        </div>
+
+        <footer class = "zaraFooter">
+            
+        </footer>
+    </div>
+</body>
+</html>
+
+<script type="module">
+
+    import navbar from './components/navbar.js';
+
+    let nav = document.querySelector(".zaraHeader");
+    nav.innerHTML = navbar();
+
+    import footer from './components/footer.js';
+
+    let foot = document.querySelector(".zaraFooter");
+    foot.innerHTML = footer();
+
+</script>
+
+<script src="./scripts/login.js"></script>

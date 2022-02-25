@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing</title>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./styles/navbar.css">
+<link rel="stylesheet" href="./styles/footer.css">
+<link rel="stylesheet" href="./styles/landing.css">
+<link rel="stylesheet" href="//maxcdn.bootstarpcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+<body>
+    <header class="zaraHeader"></header>
+
+    <div id="container">
+
+        <div id="section">
+
+            <div class="sectionDiff">
+                <div id="womenSection" class="category">
+                    <img src="https://static.zara.net/photos///contents/mkt/spots/ss22-north-woman-new/subhome-xmedia-08-2//w/1209/IMAGE-large-landscape-df408c98-18e7-463d-b682-6ce00be7e3fa-default_0.jpg?ts=1645708781229" alt="" onclick="women()" >
+                    <img src="https://static.zara.net/photos///contents/mkt/spots/ss22-north-woman-dresses/subhome-xmedia-08//w/1209/IMAGE-large-landscape-21f4daa8-2fa8-47ca-a7e3-f330f86a02ec-default_0.jpg?ts=1645709776551" alt="" onclick="women()" >
+                    <img src="https://static.zara.net/photos///contents/mkt/spots/ss22-north-woman-shoes-bags/subhome-xmedia-08//w/1209/IMAGE-large-landscape-b1c8fbe8-bf41-4aa7-bad0-794f0713c4b9-default_0.jpg?ts=1645713783552" alt="" onclick="women()" >            
+                </div>
+                <div id="menSection" class="category">
+                    <img src="https://static.zara.net/photos///contents/mkt/spots/ss22-north-man-new/subhome-xmedia-08-2//w/1209/IMAGE-large-landscape-6e9566d1-6b1e-48c2-bd15-ba18d3999615-default_0.jpg?ts=1645618888524" alt="" onclick="men()" >
+                    <img src="https://static.zara.net/photos///contents/mkt/spots/ss22-north-man-atleticz/subhome-xmedia-05-1//w/1209/IMAGE-large-landscape-349d148f-9137-4818-9252-8f67fc10610b-default_0.jpg?ts=1643713356645" alt="" onclick="men()" >
+                    <img src="https://static.zara.net/photos///contents/mkt/spots/ss22-north-man-z-experience/subhome-xmedia-08//w/1209/IMAGE-large-landscape-140af63a-8529-418a-aaf3-843f49882dc2-default_0.jpg?ts=1645435895217" alt="" onclick="men()" >            
+                </div>
+                <div id="kidsSection" class="category">
+                    <img src="https://static.zara.net/photos///2022/V/0/3/p/4676/655/427/302/w/383/4676655427_1_1_1.jpg?ts=1644855327229" alt="" onclick="kid()" >
+                    <img src="https://static.zara.net/photos///contents/mkt/spots/ss22-north-beachwear-kids/subhome-xmedia-08//w/1200/large-landscape-d836b835-1a53-4463-b3cb-0d427d9b5401_0.jpg?ts=1645446229631" alt="" onclick="kid()" >
+                    <img src="https://static.zara.net/photos///2022/V/0/3/p/5644/629/514/103/w/1238/5644629514_15_1_1.jpg?ts=1644925717017" alt="" onclick="kid()">
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div onclick="side_slide(-1)" class="slide">
+        <span class="fa fa-angle-left"></span>
+    </div> 
+    <div onclick="side_slide(1)" class="slide" id="right">
+        <span class="fa fa-angle-right"></span>
+    </div>
+    
+    <footer class="zaraFooter"></footer>
+</body>
+</html>
+
+<script type="module">
+
+    import navbar from './components/navbar.js';
+
+    let nav = document.querySelector(".zaraHeader");
+    nav.innerHTML = navbar();
+
+    import footer from './components/footer.js';
+
+    let foot = document.querySelector(".zaraFooter");
+    foot.innerHTML = footer();
+
+</script>
+<script src="./scripts/index.js"></script>
+
+
+

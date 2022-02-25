@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men Section</title>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./styles/navbar.css">
+<link rel="stylesheet" href="./styles/footer.css">
+<link rel="stylesheet" href="./styles/appendLanding.css">
+
+<body>
+    <header class="zaraHeader"></header>
+
+    <div id="container"></div>
+    
+    <footer class="zaraFooter"></footer>
+</body>
+</html>
+
+<script type="module">
+
+    import navbar from './components/navbar.js';
+
+    let nav = document.querySelector(".zaraHeader");
+    nav.innerHTML = navbar();
+
+    import footer from './components/footer.js';
+
+    let foot = document.querySelector(".zaraFooter");
+    foot.innerHTML = footer();
+
+    import displayProduct from './scripts/appendLanding.js';
+
+    let menProductList = [
+    {
+        name:"SLIM FIT JEANS WITH ROPE BELT",
+        shortDesc:"Collared shirt with long sleeves and a button-up front.",
+        price: 1990.00,
+        color: "BLUE | 2298/225",
+        material: "We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products. The Green to Wear 2.0 standard aims to minimise the environmental impact of textile manufacturing. To that end, we have developed Inditex’s The List programme, which helps guarantee both that production processes are clean and that our garments are safe and healthy. OUTER SHELL 100% cotton",
+        care: "Caring for your clothes is caring for the environment. Lower temperature washes and delicate spin cycles are gentler on garments and help to protect the colour, shape and structure of the fabric. Furthermore, they reduce the amount of energy used in care processes. [car]7 Machine wash at max. 30ºC/86ºF with short spin cycle [car]14 Do not use bleach [car]18 Iron at a maximum of 110ºC/230ºF [car]125 Dry clean with tetrachloroethylene [car]35 Do not tumble dry",
+        imgUrl:"https://static.zara.net/photos///2022/V/0/2/p/5072/401/407/32/w/750/5072401407_1_1_1.jpg?ts=1645608176426"
+    },
+    {
+        name:"RETRO SNEKERS",
+        shortDesc:"Crop top featuring a V-neckline and straps with faux pearl bead appliqués. False rhinestone button details. Invisible side zip fastening.",
+        price: 2890.00,
+        color: "MULTICOLOURED | 8351/028",
+        material: "We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products. The Green to Wear 2.0 standard aims to minimise the environmental impact of textile manufacturing. To that end, we have developed Inditex’s The List programme, which helps guarantee both that production processes are clean and that our garments are safe and healthy. OUTER SHELL 100% cotton",
+        care: "Caring for your clothes is caring for the environment. Lower temperature washes and delicate spin cycles are gentler on garments and help to protect the colour, shape and structure of the fabric. Furthermore, they reduce the amount of energy used in care processes. [car]7 Machine wash at max. 30ºC/86ºF with short spin cycle [car]14 Do not use bleach [car]18 Iron at a maximum of 110ºC/230ºF [car]125 Dry clean with tetrachloroethylene [car]35 Do not tumble dry",
+        imgUrl:"https://static.zara.net/photos///2022/V/1/1/p/2223/920/001/33/w/750/2223920001_1_1_1.jpg?ts=1645470800321"
+    },
+    {
+        name:"HOODED JACKET WITH PATCHES",
+        shortDesc:"Shirt with a Johnny collar and long sleeves. Featuring a front patch pocket, an asymmetric hem and a button-up front.",
+        price: 1990.00,
+        color: "WHITE | 8741/023",
+        material: "We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products. The Green to Wear 2.0 standard aims to minimise the environmental impact of textile manufacturing. To that end, we have developed Inditex’s The List programme, which helps guarantee both that production processes are clean and that our garments are safe and healthy. OUTER SHELL 100% cotton",
+        care: "Caring for your clothes is caring for the environment. Lower temperature washes and delicate spin cycles are gentler on garments and help to protect the colour, shape and structure of the fabric. Furthermore, they reduce the amount of energy used in care processes. [car]7 Machine wash at max. 30ºC/86ºF with short spin cycle [car]14 Do not use bleach [car]18 Iron at a maximum of 110ºC/230ºF [car]125 Dry clean with tetrachloroethylene [car]35 Do not tumble dry",
+        imgUrl:"https://static.zara.net/photos///2022/V/0/1/p/3427/323/800/32/w/750/3427323800_1_1_1.jpg?ts=1645178232044"
+    },
+    {
+        name:"CHECK PYJAMA SHIRT",
+        shortDesc:"High-waist trousers with front pockets. Front fastening with zip fly, inside button and metal hook.",
+        price: 2990.00,
+        color: "RED | 2200/940",
+        material: "We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products. The Green to Wear 2.0 standard aims to minimise the environmental impact of textile manufacturing. To that end, we have developed Inditex’s The List programme, which helps guarantee both that production processes are clean and that our garments are safe and healthy. OUTER SHELL 100% cotton",
+        care: "Caring for your clothes is caring for the environment. Lower temperature washes and delicate spin cycles are gentler on garments and help to protect the colour, shape and structure of the fabric. Furthermore, they reduce the amount of energy used in care processes. [car]7 Machine wash at max. 30ºC/86ºF with short spin cycle [car]14 Do not use bleach [car]18 Iron at a maximum of 110ºC/230ºF [car]125 Dry clean with tetrachloroethylene [car]35 Do not tumble dry",
+        imgUrl:"https://static.zara.net/photos///2022/V/0/2/p/0775/412/401/2/w/750/0775412401_1_1_1.jpg?ts=1645179004246"
+    },
+    {
+        name:"TRAUSER WITH COLOUR BLOCK STRIPES",
+        shortDesc:"High-waist jeans with front darts and buttons. Featuring front pockets and rear false welt pockets. Wide-leg design. Seamless hems. Front zip fly and metal hook fastening.",
+        price: 3990.00,
+        color: "MID-BLUE | 8527/055",
+        material: "We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products. The Green to Wear 2.0 standard aims to minimise the environmental impact of textile manufacturing. To that end, we have developed Inditex’s The List programme, which helps guarantee both that production processes are clean and that our garments are safe and healthy. OUTER SHELL 100% cotton",
+        care: "Caring for your clothes is caring for the environment. Lower temperature washes and delicate spin cycles are gentler on garments and help to protect the colour, shape and structure of the fabric. Furthermore, they reduce the amount of energy used in care processes. [car]7 Machine wash at max. 30ºC/86ºF with short spin cycle [car]14 Do not use bleach [car]18 Iron at a maximum of 110ºC/230ºF [car]125 Dry clean with tetrachloroethylene [car]35 Do not tumble dry",
+        imgUrl:"https://static.zara.net/photos///2022/V/0/1/p/6674/413/518/32/w/750/6674413518_1_1_1.jpg?ts=1645020820426",
+    },
+    {
+        name:"SEAMLESS SHORT SLEEVE T-SHIRT",
+        shortDesc:"High-waist jeans with side tabs and gold buttons. Front pockets. Zip fly and button fastening.",
+        price: 2790.00 ,
+        color: "WHITE | 8527/051",
+        material: "We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products. The Green to Wear 2.0 standard aims to minimise the environmental impact of textile manufacturing. To that end, we have developed Inditex’s The List programme, which helps guarantee both that production processes are clean and that our garments are safe and healthy. OUTER SHELL 100% cotton",
+        care: "Caring for your clothes is caring for the environment. Lower temperature washes and delicate spin cycles are gentler on garments and help to protect the colour, shape and structure of the fabric. Furthermore, they reduce the amount of energy used in care processes. [car]7 Machine wash at max. 30ºC/86ºF with short spin cycle [car]14 Do not use bleach [car]18 Iron at a maximum of 110ºC/230ºF [car]125 Dry clean with tetrachloroethylene [car]35 Do not tumble dry",
+        imgUrl:"https://static.zara.net/photos///2022/V/0/1/p/1368/401/505/612/w/750/1368401505_1_1_1.jpg?ts=1638532622808"
+    },
+    {
+        name:"LONG SLEEVE SEAMLESS T-SHIRT",
+        shortDesc:"Mid-heel sandals with elastic straps across the front and rubberised track soles. Heel height of 5 cm. / 1.9″ ",
+        price: 2990.00,
+        color: "BEIGE | 3319/910",
+        material: "We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products. The Green to Wear 2.0 standard aims to minimise the environmental impact of textile manufacturing. To that end, we have developed Inditex’s The List programme, which helps guarantee both that production processes are clean and that our garments are safe and healthy. OUTER SHELL 100% cotton",
+        care: "Caring for your clothes is caring for the environment. Lower temperature washes and delicate spin cycles are gentler on garments and help to protect the colour, shape and structure of the fabric. Furthermore, they reduce the amount of energy used in care processes. [car]7 Machine wash at max. 30ºC/86ºF with short spin cycle [car]14 Do not use bleach [car]18 Iron at a maximum of 110ºC/230ºF [car]125 Dry clean with tetrachloroethylene [car]35 Do not tumble dry",
+        imgUrl:"https://static.zara.net/photos///2021/I/0/1/p/1368/400/800/2/w/750/1368400800_1_1_1.jpg?ts=1632947952479"
+    },
+    {
+        name:"5” RUNNING SHORTS",
+        shortDesc:"Sleeveless flowing dress with a high neck. Made of fabric with gathered elastic detail.",
+        price: 1990.00,
+        color: "BLUE | 5039/597",
+        material: "We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products. The Green to Wear 2.0 standard aims to minimise the environmental impact of textile manufacturing. To that end, we have developed Inditex’s The List programme, which helps guarantee both that production processes are clean and that our garments are safe and healthy. OUTER SHELL 100% cotton",
+        care: "Caring for your clothes is caring for the environment. Lower temperature washes and delicate spin cycles are gentler on garments and help to protect the colour, shape and structure of the fabric. Furthermore, they reduce the amount of energy used in care processes. [car]7 Machine wash at max. 30ºC/86ºF with short spin cycle [car]14 Do not use bleach [car]18 Iron at a maximum of 110ºC/230ºF [car]125 Dry clean with tetrachloroethylene [car]35 Do not tumble dry",
+        imgUrl:"https://static.zara.net/photos///2021/I/0/1/p/1105/451/800/84/w/750/1105451800_1_1_1.jpg?ts=1632852415593"
+    },
+    {
+        name:"JOGGER TROUSERS",
+        shortDesc:"JOGGER TROUSERS with snap-button fastening at the bottom.",
+        price: 1290.00,
+        color: "BLUE | 5039/371",
+        material: "We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products. The Green to Wear 2.0 standard aims to minimise the environmental impact of textile manufacturing. To that end, we have developed Inditex’s The List programme, which helps guarantee both that production processes are clean and that our garments are safe and healthy. OUTER SHELL 100% cotton",
+        care: "Caring for your clothes is caring for the environment. Lower temperature washes and delicate spin cycles are gentler on garments and help to protect the colour, shape and structure of the fabric. Furthermore, they reduce the amount of energy used in care processes. [car]7 Machine wash at max. 30ºC/86ºF with short spin cycle [car]14 Do not use bleach [car]18 Iron at a maximum of 110ºC/230ºF [car]125 Dry clean with tetrachloroethylene [car]35 Do not tumble dry",
+        imgUrl:"https://static.zara.net/photos///2022/V/0/1/p/0761/606/800/2/w/750/0761606800_1_1_1.jpg?ts=1638521646781"
+    },
+    {
+        name:"COLOUR BLOCK WINDBREAKER",
+        shortDesc:"Sleeveless high neck crop top.",
+        price: 6990.00,
+        color: "BEIGE | 1750/001",
+        material: "We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products. The Green to Wear 2.0 standard aims to minimise the environmental impact of textile manufacturing. To that end, we have developed Inditex’s The List programme, which helps guarantee both that production processes are clean and that our garments are safe and healthy. OUTER SHELL 100% cotton",
+        care: "Caring for your clothes is caring for the environment. Lower temperature washes and delicate spin cycles are gentler on garments and help to protect the colour, shape and structure of the fabric. Furthermore, they reduce the amount of energy used in care processes. [car]7 Machine wash at max. 30ºC/86ºF with short spin cycle [car]14 Do not use bleach [car]18 Iron at a maximum of 110ºC/230ºF [car]125 Dry clean with tetrachloroethylene [car]35 Do not tumble dry",
+        imgUrl:"https://static.zara.net/photos///2022/V/0/2/p/5320/208/505/33/w/750/5320208505_1_1_1.jpg?ts=1643649081113"
+    },
+    {   
+        name:"COMBINED QUILED GILET",
+        shortDesc:"Cropped sweater with a round neckline and long sleeves.",
+        price: 4590.00,
+        color: "BLUE | 3319/910",
+        material: "We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products. The Green to Wear 2.0 standard aims to minimise the environmental impact of textile manufacturing. To that end, we have developed Inditex’s The List programme, which helps guarantee both that production processes are clean and that our garments are safe and healthy. OUTER SHELL 100% cotton",
+        care: "Caring for your clothes is caring for the environment. Lower temperature washes and delicate spin cycles are gentler on garments and help to protect the colour, shape and structure of the fabric. Furthermore, they reduce the amount of energy used in care processes. [car]7 Machine wash at max. 30ºC/86ºF with short spin cycle [car]14 Do not use bleach [car]18 Iron at a maximum of 110ºC/230ºF [car]125 Dry clean with tetrachloroethylene [car]35 Do not tumble dry",
+        imgUrl:"https://static.zara.net/photos///2021/I/0/2/p/1591/401/800/2/w/750/1591401800_6_1_1.jpg?ts=1635944500728"
+    },
+    {
+        name:"SPORTS BACKPACK",
+        shortDesc:"High-waist trousers with side in-seam pockets and rear welt pocket. Front dart detail. Wide-leg design. Turn-up hems. Front zip fly, metal hook and button fastening.",
+        price: 4990.00 ,
+        color: "NAVY BLUE | 2332/597",
+        material: "We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products. The Green to Wear 2.0 standard aims to minimise the environmental impact of textile manufacturing. To that end, we have developed Inditex’s The List programme, which helps guarantee both that production processes are clean and that our garments are safe and healthy. OUTER SHELL 100% cotton",
+        care: "Caring for your clothes is caring for the environment. Lower temperature washes and delicate spin cycles are gentler on garments and help to protect the colour, shape and structure of the fabric. Furthermore, they reduce the amount of energy used in care processes. [car]7 Machine wash at max. 30ºC/86ºF with short spin cycle [car]14 Do not use bleach [car]18 Iron at a maximum of 110ºC/230ºF [car]125 Dry clean with tetrachloroethylene [car]35 Do not tumble dry",
+        imgUrl:"https://static.zara.net/photos///2021/I/1/1/p/3248/820/001/2/w/750/3248820001_1_1_1.jpg?ts=1632859264396"
+    },
+    {
+        name:"PREMIUM GPS COROS PACE 2 SPORTS WATCH",
+        shortDesc:"Lightweight, with many functions including in-race power estimate, training plans for various platforms and a triathlon profile.",
+        price: 19990.00,
+        color: "NEON PINK | 1610/371",
+        material: "We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products. The Green to Wear 2.0 standard aims to minimise the environmental impact of textile manufacturing. To that end, we have developed Inditex’s The List programme, which helps guarantee both that production processes are clean and that our garments are safe and healthy. OUTER SHELL 100% cotton",
+        care: "Caring for your clothes is caring for the environment. Lower temperature washes and delicate spin cycles are gentler on garments and help to protect the colour, shape and structure of the fabric. Furthermore, they reduce the amount of energy used in care processes. [car]7 Machine wash at max. 30ºC/86ºF with short spin cycle [car]14 Do not use bleach [car]18 Iron at a maximum of 110ºC/230ºF [car]125 Dry clean with tetrachloroethylene [car]35 Do not tumble dry",
+        imgUrl:"https://static.zara.net/photos///2021/I/0/1/p/2747/300/250/2/w/750/2747300250_1_1_1.jpg?ts=1632946588759"
+    },
+    {
+        name:"2-PACK SHORT SEAMLESS SOCKS",
+        shortDesc:"Pack of two pairs of ankle socks with breathable mesh. Featuring a cushioned sole.",
+        price: 990.00,
+        color: "MULTICOLOURED | 2664/139",
+        material: "We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products. The Green to Wear 2.0 standard aims to minimise the environmental impact of textile manufacturing. To that end, we have developed Inditex’s The List programme, which helps guarantee both that production processes are clean and that our garments are safe and healthy. OUTER SHELL 100% cotton",
+        care: "Caring for your clothes is caring for the environment. Lower temperature washes and delicate spin cycles are gentler on garments and help to protect the colour, shape and structure of the fabric. Furthermore, they reduce the amount of energy used in care processes. [car]7 Machine wash at max. 30ºC/86ºF with short spin cycle [car]14 Do not use bleach [car]18 Iron at a maximum of 110ºC/230ºF [car]125 Dry clean with tetrachloroethylene [car]35 Do not tumble dry",
+        imgUrl:"https://static.zara.net/photos///2021/I/0/1/p/1089/301/555/2/w/750/1089301555_1_1_1.jpg?ts=1632925783113"
+    }
+]
+
+    var menProd_data = [];
+
+    menProductList.forEach(function (prod) {
+        var Product = {
+            productName: prod.name,
+            productShortDesc: prod.shortDesc,
+            productPrice: prod.price,
+            productColor:prod.color,
+            productMaterial: prod.material,
+            productCare: prod.care,
+            productImg:prod.imgUrl,
+        }
+        menProd_data.push(Product)
+        
+    })
+    console.log('menProd_data:', menProd_data)
+    localStorage.setItem("menProd_data", JSON.stringify(menProd_data));
+
+    let parent = document.getElementById("container");
+    displayProduct(menProd_data,parent);
+
+</script>

@@ -1,0 +1,34 @@
+
+#footerDiv{
+    width:80%;
+    height: 400px;
+    margin:auto;
+    border-bottom:1px solid lightgray;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+}
+li{
+    font-size: smaller;
+    cursor: pointer;
+}
+#belowFooterDiv{
+    width:80%;
+    margin:auto;
+    padding: 10px;
+}
+#belowFooterDiv>div:first-child{
+    /* border:1px solid; */
+    display: grid;
+    grid-template-columns: 20% 20%;
+    justify-content: space-between;
+}
+#belowFooterDiv>div:last-child{
+    /* border:1px solid; */
+    height: 250px;
+    justify-content: baseline;
+    margin-bottom: 10px;
+    
+}
+#belowFooterDiv>div:last-child>p{
+    margin-top: 200px;
+}

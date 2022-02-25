@@ -1,0 +1,89 @@
+
+#{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    background-color: transparent;  
+}
+
+#container{
+    /* border:1px solid red; */
+    width:85%;
+    margin: auto;
+    padding-top: 150px;
+    padding-bottom: 200px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    background-color: transparent;  
+
+}
+
+#section{
+    /* border:1px solid; */
+    height: 2200px;
+    width: 100%;
+    /* overflow: scroll; */
+    position: relative;
+    background-color: transparent;  
+}
+
+#section .sectionDiff{
+    /* border: 1px solid blue; */
+    height: 100%;
+    width: 100%;
+    background-color: transparent;  
+}
+/* 
+.sectionDiff{
+
+} */
+
+.slide{
+    position: fixed;
+    top: 50%;
+    transform: translateY(50%);
+    /* border: 2px solid black; */
+    height:45px;
+    width:45px;
+    cursor: pointer;
+    /* background-color: rgba(255, 255, 255, 0.1); */
+} 
+
+.slide:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.slide span{
+    font-size: 35px;
+    color:gray;
+    line-height: 41px;
+}
+
+#right{
+    right: 0;
+} 
+
+#womenSection>img{
+    width:90%;
+    margin-bottom: 100px;
+    object-fit: cover;
+}
+
+#menSection>img{
+    width:90%;
+    margin-bottom: 100px;
+    object-fit: cover;
+}
+
+#kidsSection>img:first-child{
+    width: 50%;
+}
+
+#kidsSection>img{
+    width:90%;
+    margin-bottom: 100px;
+    object-fit: cover;
+}

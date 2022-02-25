@@ -1,0 +1,58 @@
+body{
+    background-color: white;
+}
+#mainHead{
+    width:100%;
+    display:grid;
+    grid-template-columns: 10% 50% 20% 20%;
+    position: fixed;
+    /* background-color: white; */
+    padding: 10px 0;
+    z-index: 10;
+}
+#hamburger>img{
+    width:15%;
+    cursor: pointer;
+    padding:15px 25px;
+}
+#zaraLogo>a>img{
+    width:20%;
+    cursor: pointer;
+    /* padding:10px; */
+}
+#searchLogo>button{
+    text-align: left;
+    width:50%;
+    padding-top: 10px;
+    background-color: transparent;
+    border:transparent;
+    color:black;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+#cartLogo{
+    padding-top:10px;
+    display:flex;
+}
+#signin{
+    flex:1;
+}
+#other{
+    flex:1;
+}
+/* #cartLogo>a:first-child{
+    margin-left: 40%;
+} */
+#cartLogo>div>a>i{
+    font-size: 24px;
+    cursor: pointer;
+}
+#cartLogo>div>a,i{
+    color: black;
+    text-decoration: none;
+    text-align: left;
+}
+a{
+    text-decoration: none;
+    color:black;
+}

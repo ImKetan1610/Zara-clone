@@ -1,0 +1,23 @@
+#container{
+    /* border:1px solid red; */
+    width:100%;
+    margin: auto;
+    padding-top: 150px;
+    padding-bottom: 200px;
+    padding-left: 25px;
+    display: grid;
+    grid-template-columns: repeat(4,20%);
+    grid-gap:5%;
+    margin: auto;
+    align-items: center;
+    overflow: scroll;
+}
+#eachProduct{
+    cursor: pointer;
+}
+#eachProduct>div{
+    display:flex;
+    font-size: 8px;
+    justify-content: space-between;
+    color: gray;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkout</title>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./styles/navbar.css">
+<link rel="stylesheet" href="./styles/footer.css">
+<link rel="stylesheet" href="./styles/checkout.css">
+
+<body>
+    <header class="zaraHeader"></header>
+
+    <div id="container"><h3>CHOOSE A PAYMENT METHOD</h3></div>
+    <div id="paymentModes">
+        <div onclick="cardDetails()" id="visa">
+            <img src="https://1000logos.net/wp-content/uploads/2021/11/VISA-logo.jpg" alt="">
+            <p>VISA</p>
+        </div>
+        <div onclick="cardDetails()" id="master">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/450px-MasterCard_Logo.svg.png?20140711182052" alt="">
+            <p>MASTERCARD</p>
+        </div>
+        <div onclick="cardDetails()" id="american">
+            <img src="https://www.logo.wine/a/logo/American_Express/American_Express-Logo.wine.svg" alt="">
+            <p>AMERICAN EXPRESS</p>
+        </div>
+        <div onclick="cardDetails()" id="rupay">
+            <img src="https://myind.net/sites/default/files/field/image/06cd1a3c_rupay-logo.png" alt="">
+            <p>RUPAY</p>
+        </div>
+        <div id="cash" onclick="order()">
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/cash-logo-png-transparent.png" alt="">
+            <p>CASH ON DELIVERY</p>
+        </div>
+    </div>
+    
+    <footer class="zaraFooter"></footer>
+</body>
+</html>
+
+<script type="module">
+
+    import navbar from './components/navbar.js';
+
+    let nav = document.querySelector(".zaraHeader");
+    nav.innerHTML = navbar();
+
+    import footer from './components/footer.js';
+
+    let foot = document.querySelector(".zaraFooter");
+    foot.innerHTML = footer();
+
+</script>
+<script>
+    function cardDetails() {
+        window.location.href = "./cardDetails.html";
+    }
+    function order() {
+        window.location.href = "./placeOrder.html";
+    }
+</script>

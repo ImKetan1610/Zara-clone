@@ -1,0 +1,23 @@
+#container{
+    width:75%;
+    margin: auto;
+    padding-top: 150px;
+    padding-bottom: 200px;
+   
+}
+#container>div{
+    border:1px solid;
+    width:60%;
+    padding:2%;
+    margin: auto;
+    border-radius: 5px;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: space-between;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+#container>div>div>form>input{
+    width:80%;
+    height:35px;
+}

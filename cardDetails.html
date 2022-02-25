@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./styles/navbar.css">
+<link rel="stylesheet" href="./styles/footer.css">
+<link rel="stylesheet" href="./styles/cardDetails.css">
+
+
+<body>
+    <header class="zaraHeader"></header>
+
+    <div id="container">
+        <div>
+            <div id="img">
+                <img src="https://www.coastalstatesbank.com/assets/content/1Vr14Fmm/Debit-Cards.png" alt="">
+            </div>
+            <div id="details">
+                <form action="">
+                    <input id="cardNum" type="Number" placeholder="Enter Card Number"><br><br>
+                    <input id="cvv" type="Number" placeholder="Enter CVV"><br><br>
+                    <input id ="name" type="text" placeholder="Enter Card Holder's Name"><br><br>
+                    <input id="date" type="date" placeholder="Enter Expiry Date"><br><br>
+                    <input id="code" type="number" placeholder="Enter Security Code"><br><br>
+                    <input type="submit" value="PROCEED FURTHER">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="zaraFooter"></footer>
+</body>
+</html>
+
+<script type="module">
+
+    import navbar from './components/navbar.js';
+
+    let nav = document.querySelector(".zaraHeader");
+    nav.innerHTML = navbar();
+
+    import footer from './components/footer.js';
+
+    let foot = document.querySelector(".zaraFooter");
+    foot.innerHTML = footer();
+
+</script>
+<script>
+    document.querySelector("form").addEventListener("submit", function(event){
+        event.preventDefault();
+        let cardNumber = document.getElementById('cardNum').value;
+        let cvv = document.getElementById('cvv').value;
+        let name = document.getElementById('name').value;
+        let date = document.getElementById('date').value;
+        let code = document.getElementById('code').value;
+
+        if(cardNumber==""||cvv==""||name==""||date==""||code==""){
+            alert("Please fill the card Details");
+        }
+        else{
+            window.location.href="./placeOrder.html"
+        }
+
+    })
+</script>

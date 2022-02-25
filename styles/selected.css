@@ -1,0 +1,40 @@
+#container{
+    width:75%;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+#mainDiv{
+    /* border:1px solid red; */
+    height: 800px;
+    display:grid;
+    grid-template-columns: 20% 40% 20%;
+    grid-gap:2.5%;
+    margin: auto;
+    justify-content: space-around;
+}
+#mainDiv>div>img{
+    width:100%;
+    height:80%;
+}
+#mainDiv>div:first-child{
+    
+    margin-top: 100%;
+    height: 50%;
+    overflow: scroll;
+}
+#mainDiv>div:last-child{
+    margin-top: 100%;
+    height: 50%;
+    text-align: center;
+}
+#mainDiv>div:last-child>button{
+    width:80%;
+    color:white;
+    background-color: black;
+    border: transparent;
+    height: 35px;
+}
+#mainDiv p{
+    font-size: 12px;
+}
