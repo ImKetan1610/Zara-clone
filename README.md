@@ -8,7 +8,6 @@ unit 3 construct week project
 
 ### Tech Stack Used
 HTML | CSS | JS | LocalStorage
-css3   express   html5   javascript 
 
 ### Live Link
 [ZARA clone](https://zaraclone123.netlify.app/)
