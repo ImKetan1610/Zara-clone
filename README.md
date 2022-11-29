@@ -1,6 +1,9 @@
 # Zara-clone
 unit 3 construct week project
 
+## Type-of-Project
+Solo Project
+
 # Welcome :wave:
 
 <img src="https://github.com/ImKetan1610/Zara-clone/blob/main/Zara1.JPG"></img>
